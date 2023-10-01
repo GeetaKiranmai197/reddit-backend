@@ -1,24 +1,17 @@
 package com.example.redditbackend.service;
 
 import com.example.redditbackend.dto.RegisterRequest;
-import com.example.redditbackend.exceptions.SpringRedditException;
 import com.example.redditbackend.model.NotificationEmail;
 import com.example.redditbackend.model.User;
 import com.example.redditbackend.model.VerificationToken;
 import com.example.redditbackend.repository.UserRepository;
 import com.example.redditbackend.repository.VerificationTokenRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.security.authentication.AnonymousAuthenticationToken;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.Instant;
-import java.util.Optional;
 import java.util.UUID;
 
 @Service
