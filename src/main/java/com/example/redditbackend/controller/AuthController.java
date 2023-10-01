@@ -15,6 +15,11 @@ public class AuthController {
 
     private final AuthService authService;
 
+    @GetMapping("/") // Define a new GET mapping for the root endpoint
+    public ResponseEntity<String> welcome() {
+        return new ResponseEntity<>("Welcome to Reddit Backend API", OK);
+    }
+
     @PostMapping("/signup")
     public ResponseEntity<String> signup(@RequestBody RegisterRequest registerRequest) {
         authService.signup(registerRequest);
